@@ -1,10 +1,45 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>KopfüBar</title>
-    </head>
-    <body>
-      KopfÜbar Test
-    </body>
-  </html>
+  <head>
+    <meta charset="utf-8" />
+    <title>KopfüBar</title>
+    <link rel="shortcut icon" href=>
+    <style>
+      html
+      {
+        font-family: arial;
+        font-size: 16pt;
+
+        <?php
+          $bg = array('c1.jpg', 'c2.jpg', 'c3.jpg', 'c4.jpg', 'c5.jpg', 'c6.jpg', 'c7.jpg', 'c8.jpg');
+
+          $i = rand(0, count($bg)-1);
+          $selectedBg = "$bg[$i]";
+        ?>
+        background-image: image(../Cocktailbilder/<?php echo $selectedBg; ?>);
+        /**background-image: image(..\Cocktailbilder\batida-brasil.jpg);**/
+        /**background-image: url(https://unsplash.it/1024/768/?random);**/
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+      h1
+      {
+        color: blue;
+      }
+      main
+      {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="app">
+      <header>
+        <h1>KopfüBar</h1>
+        <button>Hinzufügen</button>
+        <button>Sortiert nach</button>
+      </header>
+    </section>
+  </body>
+</html>
