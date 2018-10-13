@@ -46,29 +46,93 @@ ul
 }
 ul li
 {
-  /**list-style: none;**/
+  list-style: none;
   display: inline-block;
   /**padding: 20px;**/
 }
-#links
+#cocktails
+{
+  list-style: none;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+  border-bottom: 1px solid black;
+  border-bottom-width: 100%;
+}
+#cocktails a
+{
+  color: black;
+  text-decoration: none;
+}
+#hinzufuegen
 {
   width: 43%;
   background: #088A29;
   padding: 1em;
 }
-#rechts
+#sortieren
 {
   width: 43%;
   background: #08088A;
   padding: 1em;
 }
-#links:hover
+#abbrechen
+{
+  width: 43%;
+  background: #DF0101;
+  padding: 1em;
+}
+#fertig
+{
+  width: 43%;
+  background: #088A29;
+  padding: 1em;
+}
+#zurueck
+{
+  width: 27%;
+  background: #08088A;
+  padding: 1em;
+}
+#loeschen
+{
+  width: 27%;
+  background: #DF0101;
+  padding: 1em;
+}
+#bearbeiten
+{
+  width: 27%;
+  background: #088A29;
+  padding: 1em;
+}
+#hinzufuegen:hover
 {
   background: #04B431;
 }
-#rechts:hover
+#sortieren:hover
 {
   background: #0000FF;
+}
+#abbrechen:hover
+{
+  background: #FE2E2E;
+}
+#fertig:hover
+{
+  background: #04B431;
+}
+#zurueck:hover
+{
+  background: #0000FF;
+}
+#loeschen:hover
+{
+  background: #FE2E2E;
+}
+#bearbeiten:hover
+{
+  background: #04B431;
 }
 ul li a
 {
@@ -109,11 +173,31 @@ ul li a
 
     padding: 0px;
   }
-  #links
+  #hinzufuegen
   {
     width: 100%;
   }
-  #rechts
+  #sortieren
+  {
+    width: 100%;
+  }
+  #abbrechen
+  {
+    width: 100%;
+  }
+  #fertig
+  {
+    width: 100%;
+  }
+  #zurueck
+  {
+    width: 100%;
+  }
+  #loeschen
+  {
+    width: 100%;
+  }
+  #bearbeiten
   {
     width: 100%;
   }

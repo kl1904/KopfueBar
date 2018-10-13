@@ -10,27 +10,27 @@
   <body>
     <main>
       <header>
-          <h1>KopfüBar</h1>
-      </header>
-      <nav>
-        <div class="toggle">
-          <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
-        </div>
-        <ul>
-          <li id="links"><a href="#">Hinzufügen</a></li>
-          <li id="rechts"><a href="#">Sortiert nach Alphabet</a></li>
-        </ul>
-      </nav>
-      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $('.menu').click(function(){
-            $('ul').toggleClass('active');
+        <h1>KopfüBar</h1>
+        <nav>
+          <div class="toggle">
+            <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+          </div>
+          <ul>
+            <li id="hinzufuegen"><a href="hinzufuegen.html">Hinzufügen</a></li>
+            <li id="sortieren"><a href="#">Sortiert nach Alphabet</a></li>
+          </ul>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.menu').click(function(){
+              $('ul').toggleClass('active');
+            })
           })
-        })
-      </script>
+        </script>
+      </header>
       <p>
-
+        <li id="cocktails"><a href="details.html">Beispiel Cocktail</a></li>
       </p>
     <main>
   </body>
