@@ -2,46 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>KopfüBar</title>
-    <link rel="shortcut icon" href=>
-    <style>
-      html
-      {
-        font-family: arial;
-        font-size: 16pt;
-
-        /**
-        <?php
-          $bg = array('c1.jpg', 'c2.jpg', 'c3.jpg', 'c4.jpg', 'c5.jpg', 'c6.jpg', 'c7.jpg', 'c8.jpg');
-
-          $i = rand(1, count($bg));
-          $selectedBg = "$bg[$i]";
-        ?>
-        **/
-        /**background-image: image(../Cocktailbilder/<?php echo $selectedBg; ?>);**/
-        /**background-image: image(../Cocktailbilder/c1.jpg);**/
-        background-image: url(https://unsplash.it/1024/768/?random);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-      h1
-      {
-        color: blue;
-      }
-      main
-      {
-        text-align: left;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
-    <section id="app">
+    <main>
       <header>
-        <h1>KopfüBar</h1>
-        <button>Hinzufügen</button>
-        <button>Sortiert nach</button>
+          <h1>KopfüBar</h1>
       </header>
-    </section>
+      <nav>
+        <div class="toggle">
+          <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        </div>
+        <ul>
+          <li id="links"><a href="#">Hinzufügen</a></li>
+          <li id="rechts"><a href="#">Sortiert nach Alphabet</a></li>
+        </ul>
+      </nav>
+      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.menu').click(function(){
+            $('ul').toggleClass('active');
+          })
+        })
+      </script>
+      <p>
+
+      </p>
+    <main>
   </body>
 </html>
