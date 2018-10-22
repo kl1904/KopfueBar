@@ -6,63 +6,68 @@
     <title>KopfüBar</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   </head>
   <body>
-    <section id="home">
-      <main>
-        <header>
-          <h1>KopfüBar</h1>
+    <div class="tab-content">
+      <div id="menue1" class="tab-pane fade in active">
+        <main>
+          <header>
+            <h1>KopfüBar</h1>
+            <nav>
+              <div class="toggle">
+                <i class="fa fa-bars menue" aria-hidden="true"></i>
+              </div>
+              <ul>
+                <li id="hinzufuegen"><a data-toggle="tab" href="#menue2">Hinzufügen</a></li>
+                <li id="sortieren"><a data-toggle="tab" href="#menue2">Sortiert nach Alphabet</a></li>
+              </ul>
+            </nav>
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $('.menue').click(function(){
+                  $('ul').toggleClass('active');
+                })
+              })
+            </script>
+          </header>
+          <p>
+            <li id="cocktails"><a href="#sectiondetails">Beispiel Cocktail</a></li>
+          </p>
+        <main>
+      </div>
+      <div id="menue2" class="tab-pane fade">
+        <main>
+          <header>
+              <h1>Hinzufügen</h1>
+          </header>
           <nav>
             <div class="toggle">
-              <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+              <i class="fa fa-bars menue" aria-hidden="true"></i>
             </div>
             <ul>
-              <li id="hinzufuegen"><a href="#sectionhinzufuegen">Hinzufügen</a></li>
-              <li id="sortieren"><a href="#">Sortiert nach Alphabet</a></li>
+              <li id="abbrechen"><a data-toggle="tab" href="#menue1">Abbrechen</a></li>
+              <li id="fertig"><a data-toggle="tab" href="#menue1">Fertig</a></li>
             </ul>
           </nav>
+          <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
           <script type="text/javascript">
             $(document).ready(function(){
-              $('.menu').click(function(){
+              $('.menue').click(function(){
                 $('ul').toggleClass('active');
               })
             })
           </script>
-        </header>
-        <p>
-          <li id="cocktails"><a href="#sectiondetails">Beispiel Cocktail</a></li>
-        </p>
-      <main>
-    </section>
-    <section id="sectionhinzufuegen">
-      <main>
-        <header>
-            <h1>Hinzufügen</h1>
-        </header>
-        <nav>
-          <div class="toggle">
-            <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
-          </div>
-          <ul>
-            <li id="abbrechen"><a href="#home">Abbrechen</a></li>
-            <li id="fertig"><a href="#home">Fertig</a></li>
-          </ul>
-        </nav>
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $('.menu').click(function(){
-              $('ul').toggleClass('active');
-            })
-          })
-        </script>
-        <p>
+          <p>
 
-        </p>
-      <main>
-    </section>
-    <section id="sectiondetails">
+          </p>
+        <main>
+      </div>
+    </div>
+    <!-- <section id="sectiondetails">
       <main>
         <header>
             <h1>Name</h1>
@@ -116,6 +121,6 @@
 
         </p>
       <main>
-    </section>
+    </section>-->
   </body>
 </html>
