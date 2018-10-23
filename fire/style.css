@@ -1,0 +1,218 @@
+html
+{
+  font-family: arial;
+  font-size: 12pt;
+
+  /**background-image: url(https://unsplash.it/1024/1500/?random);**/
+  background:url(Hintergrund/bar.jpg);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover;
+}
+h1
+{
+  color: #0B0B3B;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+}
+main
+{
+  text-align: center;
+
+  width: 40em;
+
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  /**background: white;**/
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid black;
+
+  padding: 1px;
+}
+nav
+{
+  width: 100%;
+}
+ul
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li
+{
+  list-style: none;
+  display: inline-block;
+  /**padding: 20px;**/
+}
+#cocktails
+{
+  list-style: none;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+  border-bottom: 1px solid black;
+  border-bottom-width: 100%;
+}
+#cocktails a
+{
+  color: black;
+  text-decoration: none;
+}
+#hinzufuegen
+{
+  width: 43%;
+  background: #088A29;
+  padding: 1em;
+}
+#sortieren
+{
+  width: 43%;
+  background: #08088A;
+  padding: 1em;
+}
+#abbrechen
+{
+  width: 43%;
+  background: #DF0101;
+  padding: 1em;
+}
+#fertig
+{
+  width: 43%;
+  background: #088A29;
+  padding: 1em;
+}
+#zurueck
+{
+  width: 27%;
+  background: #08088A;
+  padding: 1em;
+}
+#loeschen
+{
+  width: 27%;
+  background: #DF0101;
+  padding: 1em;
+}
+#bearbeiten
+{
+  width: 27%;
+  background: #088A29;
+  padding: 1em;
+}
+#hinzufuegen:hover
+{
+  background: #04B431;
+}
+#sortieren:hover
+{
+  background: #0000FF;
+}
+#abbrechen:hover
+{
+  background: #FE2E2E;
+}
+#fertig:hover
+{
+  background: #04B431;
+}
+#zurueck:hover
+{
+  background: #0000FF;
+}
+#loeschen:hover
+{
+  background: #FE2E2E;
+}
+#bearbeiten:hover
+{
+  background: #04B431;
+}
+ul li a
+{
+  color: #fff;
+  text-decoration: none;
+}
+.toggle
+{
+  width: 100%;
+  padding: 10px 40px;
+  background: #585858;
+  text-align: right;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+}
+@media screen and (max-width:50em)
+{
+  .toggle
+  {
+    display:block;
+  }
+  html
+  {
+    background-image: none;
+  }
+  main
+  {
+    width: 100%;
+
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    background: white;
+    border: 0px solid black;
+
+    padding: 0px;
+  }
+  #hinzufuegen
+  {
+    width: 100%;
+  }
+  #sortieren
+  {
+    width: 100%;
+  }
+  #abbrechen
+  {
+    width: 100%;
+  }
+  #fertig
+  {
+    width: 100%;
+  }
+  #zurueck
+  {
+    width: 100%;
+  }
+  #loeschen
+  {
+    width: 100%;
+  }
+  #bearbeiten
+  {
+    width: 100%;
+  }
+  ul
+  {
+    /**width: 40%;**/
+    display: none;
+    /**text-align: right;**/
+  }
+  ul li
+  {
+      display: block;
+  }
+  .active
+  {
+    display: block;
+  }
+}
