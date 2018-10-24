@@ -25,28 +25,11 @@ firestore.settings(settings);
 var db = firebase.firestore();
 
 
+
 function storeData()
 {
     // Add a new document in collection "cities"
-  db.collection("cities").doc("LAd").set({
-      name: "pena",
-      state: "CA",
-      country: "USA"
-
-  })
-  //.then(function() {
-  //    console.log("Document successfully written!");
-
-  //})
-  //.catch(function(error) {
-  //    console.error("Error writing document: ", error);
-  //});
-}
-
-function storeData1()
-{
-    // Add a new document in collection "cities"
-  db.collection("cocktails").doc().set({
+  db.collection("cocktails").doc(document.querySelector("#name").value).set({
       name: document.querySelector("#name").value,
       zutaten: document.querySelector("#zutaten").value,
       rezept: document.querySelector("#rezept").value

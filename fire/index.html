@@ -75,7 +75,7 @@
           </div>
           <ul>
             <li id="abbrechen"><a id="home">Abbrechen</a></li>
-            <li id="fertig"><a id="home2">Fertig</a></li>
+            <li id="fertig"><a id="home2" onclick="storeData()">Fertig</a></li>
           </ul>
         </nav>
         <!--
@@ -89,10 +89,18 @@
         </script>
       -->
         <p>
-          <input id="name" type="text" placeholder="Cocktailname" />
-          <input id="zutaten" type="text" placeholder="Zutaten" />
-          <input id="rezept" type="text" placeholder="Rezept" />
-          <button id="storeDataID" onclick="storeData()">Fertig</button>
+          <div id="eingabe">
+            <a>Name des Cocktails:</a>
+            <li><input id="name" type="text" placeholder="Cocktailname" maxlength="20"/></li>
+          </div>
+          <div id="eingabe">
+            <a>Zutaten des Cocktails:</a>
+            <li><textarea id="zutaten" cols="50" rows="10" maxlength="1000" placeholder="Zutaten"></textarea></li>
+          </div>
+          <div id="eingabe">
+            <a>Zubereitung des Cocktails:</a>
+            <li><textarea id="rezept" cols="50" rows="10" maxlength="4000" placeholder="Rezept"></textarea></li>
+          </div>
         </p>
       <main>
     </section>
