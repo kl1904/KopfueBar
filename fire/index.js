@@ -28,19 +28,19 @@ var db = firebase.firestore();
 function storeData()
 {
     // Add a new document in collection "cities"
-  db.collection("cities").doc("LA").set({
-      name: "Los Angeles",
+  db.collection("cities").doc("LAd").set({
+      name: "pena",
       state: "CA",
       country: "USA"
 
   })
-  .then(function() {
-      console.log("Document successfully written!");
+  //.then(function() {
+  //    console.log("Document successfully written!");
 
-  })
-  .catch(function(error) {
-      console.error("Error writing document: ", error);
-  });
+  //})
+  //.catch(function(error) {
+  //    console.error("Error writing document: ", error);
+  //});
 }
 
 function storeData1()
@@ -146,10 +146,10 @@ db.collection("cities").doc("LA").set({
 
 
 
-  if(characterCode == 13)
-  {
-    var NameText = document.getElementById('name').value;
-    alert(NameText);
-  }
+  //if(characterCode == 13)
+  //{
+  //  var NameText = document.getElementById('name').value;
+  //  alert(NameText);
+  //}
 
 });
