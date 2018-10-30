@@ -55,6 +55,83 @@ function storeData()
   }
 }
 
+$(document).ready(function() {
+      //read alles
+      var idname = 0;
+      var zuweisung = new Array();
+    db.collection("cocktails").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            const listealles = document.getElementById("giballenamen");
+            var allescocktail ="<h3 id='cocktails' data-attribut="+doc.data().name+">"+doc.data().name+"</h3>";
+            //zuweisung[idname] = doc.data().name;
+            //alert(zuweisung);
+            //idname += 1;
+            listealles.innerHTML += allescocktail
+        });
+    });
+
+
+    /*
+    //alle namen
+    db.collection("cocktails").get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        const listenameall = document.getElementById("gibnameall");
+        var nameallcocktail ="<h3>"+doc.data().name+"</h3>";
+        listenameall.innerHTML += nameallcocktail
+      });
+    });*/
+});
+
+/*
+    //bestimmte lesen
+    //name
+    //name muss übergeben werden (.doc() funktioniert nicht)
+    db.collection("cocktails").doc("Caipirinha").get().then(function(querySnapshot) {
+      console.log(querySnapshot);
+      querySnapshot.forEach(function(doc) {
+        const listename = document.getElementById("gibname");
+        var namecocktail ="<h3>"+doc.data().name+"</h3>";
+        listename.innerHTML += namecocktail
+      });
+    })
+    .catch(function(error) {
+        console.error("Error 1: ", error);
+    });
+
+    //zutaten
+
+      db.collection("cocktails").doc("Caipirinha").get().then(function(querySnapshot){
+        querySnapshot.getDocuments(function(doc) {
+          const listezutaten = document.getElementById("gibzutaten");
+          var zutatencocktail ="<h3>"+doc.data().zutaten+"</h3>";
+          listezutaten.innerHTML += zutatencocktail
+        });
+
+      })
+      .catch(function(error) {
+          console.error("Error 2: ", error);
+      });
+      db.collection("cocktails").doc("Caipirinha").get().then(function(doc) {
+          const listename = document.getElementById("gibname");
+          var namecocktail ="<h3>"+doc.data().name+"</h3>";
+          listename.innerHTML += namecocktail
+      })
+      .catch(function(error) {
+          console.error("Error 4: ", error);
+      });
+
+    db.collection("cocktails").get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        const listerezept = document.getElementById("gibrezept");
+        var rezeptcocktail ="<h3>"+doc.data().rezept+"</h3>";
+        listerezept.innerHTML += rezeptcocktail
+      });
+    })
+    .catch(function(error) {
+        console.error("Error 3: ", error);
+    });
+*/
+
 $(document).ready(function(){
   $("#1").show();
   $("#2").hide();
@@ -66,22 +143,6 @@ $(document).ready(function(){
     $("#2").show();
     $("#3").hide();
     $("#4").hide();
-
-    function storeData()
-    {
-      // Add a new document in collection "cities"
-db.collection("cities").doc("LA").set({
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-})
-.then(function() {
-    console.log("Document successfully written!");
-})
-.catch(function(error) {
-    console.error("Error writing document: ", error);
-});
-    }
   });
 
   $("#home").click(function(){      //von hinzufügen abbrechen zu home
@@ -106,17 +167,36 @@ db.collection("cities").doc("LA").set({
   });
 
   $("#home4").click(function(){     //von details löschen zu home (funktion)
+    db.collection("cocktails").doc(name).delete();
     $("#1").show();
     $("#2").hide();
     $("#3").hide();
     $("#4").hide();
+    alert("Der Cocktail " + name + " wurde gelöscht!");
   });
 
-  $("#det").click(function(){      //von home details zu details
+  $("#det").click(function(event){      //von home details zu details
+    //var dername = document.getElementById("gibnameall");
+    //alert("hier"+ dername);
+    //alert("hallo");
+    var ele = event.target;
+    name = ele.getAttribute('data-attribut');
+    //alert(name);
     $("#1").hide();
     $("#2").hide();
     $("#3").show();
     $("#4").hide();
+
+    //var ka = document.querySelector(name).value;
+    //alert(ka);
+    db.collection("cocktails").doc(name).get().then(function(doc) {
+        //alert("#giballes")
+        const listename = document.getElementById("gibzutaten");
+        var namecocktail ="<h3>"+doc.data().name+"</h3><p>Zutaten: "+doc.data().zutaten+"</p><p>Rezept: "+doc.data().rezept+"</p>";
+        listename.innerHTML = namecocktail
+    });
+    //alert("hallo");
+    //in event.data liegt die datenatzId
   });
 
   $("#det2").click(function(){      //von bearbeiten abbrechen zu details

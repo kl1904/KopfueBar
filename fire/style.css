@@ -57,20 +57,25 @@ ul li
   list-style: none;
   display: block;
 }
-#cocktails
+#cocktailalles
 {
   list-style: none;
+}
+#cocktails
+{
   padding-top: 2em;
   padding-bottom: 2em;
   width: 100%;
   border-bottom: 1px solid black;
   border-bottom-width: 100%;
-}
-#cocktails a
-{
   color: black;
   text-decoration: none;
 }
+/*#cocktails a
+{
+  color: black;
+  text-decoration: none;
+}*/
 #hinzufuegen
 {
   width: 43%;
