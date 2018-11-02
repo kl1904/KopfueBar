@@ -33,9 +33,20 @@ function storeData()
   var pzutaten = document.querySelector("#zutaten").value;
   var prezept = document.querySelector("#rezept").value;
 
-  if (pname == "" || pzutaten == "" || prezept == "")
+  var splitname = new Array();
+  splitname = pname.split("");
+
+  var booleanleerzeichen = false;
+  for (var i = 0; i < splitname.length; i++)
   {
-    alert("Fehler beim speichern: Bitte alle Felder ausfüllen");
+    if(splitname[i]==" ")
+    {
+      booleanleerzeichen = true;
+    }
+  }
+  if (pname == "" || pzutaten == "" || prezept == "" || booleanleerzeichen==true)
+  {
+    alert("Fehler beim speichern: Bitte alle Felder ausfüllen und keine Leerzeichen im Namen verwenden");
   }
   else
   {
@@ -47,7 +58,7 @@ function storeData()
     })
     .then(function() {
         console.log("Document successfully written!");
-        alert("Cocktail wurde hinzugefügt");
+        alert("Cocktail wurde hinzugefügt, Seite muss neu geladen werden");
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
@@ -55,88 +66,18 @@ function storeData()
   }
 }
 
-$(document).ready(function() {
-      //read alles
-      var idname = 0;
-      var zuweisung = new Array();
-    db.collection("cocktails").get().then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            const listealles = document.getElementById("giballenamen");
-            var allescocktail ="<h3 id='cocktails' data-attribut="+doc.data().name+">"+doc.data().name+"</h3>";
-            //zuweisung[idname] = doc.data().name;
-            //alert(zuweisung);
-            //idname += 1;
-            listealles.innerHTML += allescocktail
-        });
-    });
-
-
-    /*
-    //alle namen
-    db.collection("cocktails").get().then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        const listenameall = document.getElementById("gibnameall");
-        var nameallcocktail ="<h3>"+doc.data().name+"</h3>";
-        listenameall.innerHTML += nameallcocktail
-      });
-    });*/
-});
-
-/*
-    //bestimmte lesen
-    //name
-    //name muss übergeben werden (.doc() funktioniert nicht)
-    db.collection("cocktails").doc("Caipirinha").get().then(function(querySnapshot) {
-      console.log(querySnapshot);
-      querySnapshot.forEach(function(doc) {
-        const listename = document.getElementById("gibname");
-        var namecocktail ="<h3>"+doc.data().name+"</h3>";
-        listename.innerHTML += namecocktail
-      });
-    })
-    .catch(function(error) {
-        console.error("Error 1: ", error);
-    });
-
-    //zutaten
-
-      db.collection("cocktails").doc("Caipirinha").get().then(function(querySnapshot){
-        querySnapshot.getDocuments(function(doc) {
-          const listezutaten = document.getElementById("gibzutaten");
-          var zutatencocktail ="<h3>"+doc.data().zutaten+"</h3>";
-          listezutaten.innerHTML += zutatencocktail
-        });
-
-      })
-      .catch(function(error) {
-          console.error("Error 2: ", error);
-      });
-      db.collection("cocktails").doc("Caipirinha").get().then(function(doc) {
-          const listename = document.getElementById("gibname");
-          var namecocktail ="<h3>"+doc.data().name+"</h3>";
-          listename.innerHTML += namecocktail
-      })
-      .catch(function(error) {
-          console.error("Error 4: ", error);
-      });
-
-    db.collection("cocktails").get().then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        const listerezept = document.getElementById("gibrezept");
-        var rezeptcocktail ="<h3>"+doc.data().rezept+"</h3>";
-        listerezept.innerHTML += rezeptcocktail
-      });
-    })
-    .catch(function(error) {
-        console.error("Error 3: ", error);
-    });
-*/
-
 $(document).ready(function(){
   $("#1").show();
   $("#2").hide();
   $("#3").hide();
   $("#4").hide();
+  db.collection("cocktails").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        const listealles = document.getElementById("giballenamen");
+        var allescocktail ="<h3 id='cocktails' data-attribut="+doc.data().name+">"+doc.data().name+"</h3>";
+        listealles.innerHTML += allescocktail
+    });
+  });
 
   $("#hinzu").click(function(){     //von home hinzufuegen zu hizufügen
     $("#1").hide();
@@ -172,31 +113,21 @@ $(document).ready(function(){
     $("#2").hide();
     $("#3").hide();
     $("#4").hide();
-    alert("Der Cocktail " + name + " wurde gelöscht!");
+    alert("Der Cocktail " + name + " wurde gelöscht, Seite muss neu geladen werden");
   });
 
   $("#det").click(function(event){      //von home details zu details
-    //var dername = document.getElementById("gibnameall");
-    //alert("hier"+ dername);
-    //alert("hallo");
     var ele = event.target;
     name = ele.getAttribute('data-attribut');
-    //alert(name);
     $("#1").hide();
     $("#2").hide();
     $("#3").show();
     $("#4").hide();
-
-    //var ka = document.querySelector(name).value;
-    //alert(ka);
     db.collection("cocktails").doc(name).get().then(function(doc) {
-        //alert("#giballes")
         const listename = document.getElementById("gibzutaten");
         var namecocktail ="<h3>"+doc.data().name+"</h3><p>Zutaten: "+doc.data().zutaten+"</p><p>Rezept: "+doc.data().rezept+"</p>";
         listename.innerHTML = namecocktail
     });
-    //alert("hallo");
-    //in event.data liegt die datenatzId
   });
 
   $("#det2").click(function(){      //von bearbeiten abbrechen zu details
@@ -207,10 +138,47 @@ $(document).ready(function(){
   });
 
   $("#det3").click(function(){      //von bearbeiten fertig zu details (funktion)
-    $("#1").hide();
-    $("#2").hide();
-    $("#3").show();
-    $("#4").hide();
+    var pname2 = document.querySelector("#name2").value;
+    var pzutaten2 = document.querySelector("#zutaten2").value;
+    var prezept2 = document.querySelector("#rezept2").value;
+
+    var splitname2 = new Array();
+    splitname2 = pname2.split("");
+
+    var booleanleerzeichen2 = false;
+
+    for (var j = 0; j < splitname2.length; j++)
+    {
+      if(splitname2[j]==" ")
+      {
+        booleanleerzeichen2 = true;
+      }
+    }
+    
+    if (pname2 == "" || pzutaten2 == "" || prezept2 == "" || booleanleerzeichen2 == true)
+    {
+      alert("Fehler beim bearbeiten: Bitte alle Felder ausfüllen und keine Leerzeichen im Namen verwenden");
+    }
+    else
+    {
+      db.collection("cocktails").doc(document.querySelector("#name2").value).set({
+          name: document.querySelector("#name2").value,
+          zutaten: document.querySelector("#zutaten2").value,
+          rezept: document.querySelector("#rezept2").value
+      })
+      .then(function() {
+          console.log("Document successfully written!");
+          db.collection("cocktails").doc(name).delete();
+          $("#1").hide();
+          $("#2").hide();
+          $("#3").show();
+          $("#4").hide();
+          alert("Der Cocktail " + name + " wurde bearbeitet, Seite muss neu geladen werden");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+    }
   });
 
   $("#bea").click(function(){       //von details bearbeiten zu bearbeiten
@@ -218,14 +186,10 @@ $(document).ready(function(){
     $("#2").hide();
     $("#3").hide();
     $("#4").show();
+    db.collection("cocktails").doc(name).get().then(function(doc) {
+        const listealles = document.getElementById("dasbearbeiten");
+        var bearbeitenalles ="<div id='eingabe'><a>Name des Cocktails:</a><li><input id='name2' type='text' value="+doc.data().name+" maxlength='20'/></li></div><div id='eingabe'><a>Zutaten des Cocktails:</a><li><textarea id='zutaten2' cols='40' rows='10' maxlength='1000'>"+doc.data().zutaten+"</textarea></li></div><div id='eingabe'><a>Zubereitung desCocktails:</a><li><textarea id='rezept2' cols='40' rows='10' maxlength='4000'>"+doc.data().rezept+"</textarea></li></div>";
+        listealles.innerHTML = bearbeitenalles
+    });
   });
-
-
-
-  //if(characterCode == 13)
-  //{
-  //  var NameText = document.getElementById('name').value;
-  //  alert(NameText);
-  //}
-
 });
