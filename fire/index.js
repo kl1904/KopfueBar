@@ -125,7 +125,7 @@ $(document).ready(function(){
     $("#4").hide();
     db.collection("cocktails").doc(name).get().then(function(doc) {
         const listename = document.getElementById("gibzutaten");
-        var namecocktail ="<h3>"+doc.data().name+"</h3><p>Zutaten: "+doc.data().zutaten+"</p><p>Rezept: "+doc.data().rezept+"</p>";
+        var namecocktail ="<br><h3 align='center'>"+doc.data().name+"</h3><p><br><h4>Zutaten: </h4>"+doc.data().zutaten+"</p><p><br><h4>Rezept: </h4>"+doc.data().rezept+"</p>";
         listename.innerHTML = namecocktail
     });
   });
@@ -154,7 +154,7 @@ $(document).ready(function(){
         booleanleerzeichen2 = true;
       }
     }
-    
+
     if (pname2 == "" || pzutaten2 == "" || prezept2 == "" || booleanleerzeichen2 == true)
     {
       alert("Fehler beim bearbeiten: Bitte alle Felder ausfüllen und keine Leerzeichen im Namen verwenden");

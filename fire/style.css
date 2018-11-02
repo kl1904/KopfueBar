@@ -71,54 +71,61 @@ ul li
   color: black;
   text-decoration: none;
 }
-/*#cocktails a
+#gibzutaten
 {
-  color: black;
-  text-decoration: none;
-}*/
-#hinzufuegen
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: left;
+}
+#hinzu
 {
-  width: 43%;
+  width: 92%;
   background: #088A29;
   padding: 1em;
 }
-#sortieren
-{
-  width: 43%;
-  background: #08088A;
-  padding: 1em;
-}
-#abbrechen
+#home
 {
   width: 43%;
   background: #DF0101;
   padding: 1em;
 }
-#fertig
+#home2
 {
   width: 43%;
   background: #088A29;
   padding: 1em;
 }
-#zurueck
+#home3
 {
   width: 27%;
   background: #08088A;
   padding: 1em;
 }
-#loeschen
+#home4
 {
   width: 27%;
   background: #DF0101;
   padding: 1em;
 }
-#bearbeiten
+#bea
 {
   width: 27%;
   background: #088A29;
   padding: 1em;
 }
-#hinzufuegen:hover
+#det2
+{
+  width: 43%;
+  background: #DF0101;
+  padding: 1em;
+}
+#det3
+{
+  width: 43%;
+  background: #088A29;
+  padding: 1em;
+}
+#hinzu:hover
 {
   background: #04B431;
 }
@@ -126,23 +133,23 @@ ul li
 {
   background: #0000FF;
 }
-#abbrechen:hover
+#home:hover
 {
   background: #FE2E2E;
 }
-#fertig:hover
+#home2:hover
 {
   background: #04B431;
 }
-#zurueck:hover
+#home3:hover
 {
   background: #0000FF;
 }
-#loeschen:hover
+#home4:hover
 {
   background: #FE2E2E;
 }
-#bearbeiten:hover
+#bea:hover
 {
   background: #04B431;
 }
@@ -185,7 +192,7 @@ ul li a
 
     padding: 0px;
   }
-  #hinzufuegen
+  #hinzu
   {
     width: 100%;
   }
@@ -193,23 +200,23 @@ ul li a
   {
     width: 100%;
   }
-  #abbrechen
+  #home
   {
     width: 100%;
   }
-  #fertig
+  #home2
   {
     width: 100%;
   }
-  #zurueck
+  #home3
   {
     width: 100%;
   }
-  #loeschen
+  #home4
   {
     width: 100%;
   }
-  #bearbeiten
+  #bea
   {
     width: 100%;
   }
