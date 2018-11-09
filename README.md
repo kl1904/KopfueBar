@@ -15,7 +15,7 @@ Beschreibung:
 Cocktails hinzufügen, bearbeiten und löschen. Dazu Anleitung und Rezept
 
 Design:
-kann nur vertikal scrollen, oben eine Leiste, hinzufügen zeigt. Wenn man auf ein Rezept klickt kann man auch nur vertikal scrollen, oben wieder Leiste mit Zurück-Button, bearbeiten und löschen
+Kann nur vertikal scrollen. Oben eine Leiste, die "Hinzufügen" zeigt. Wenn man auf ein Rezept klickt kann man auch nur vertikal scrollen, oben wieder Leiste mit Zurück-Button, "bearbeiten" und "löschen"
 
 Kompatibilität:
-Im Browser auf Handy wie Computer gleich benutzbar
+Im Browser auf Handy sowie Computer gleich benutzbar
