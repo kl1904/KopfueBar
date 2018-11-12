@@ -1,5 +1,5 @@
 Um die Webanwendung zu starten öffnen Sie den Ordner "fire". In diesem befinden sich alle mit der Webanwendung in verbindungstehenden Dateien.
-Führen sie nun die Datei "index.html" mit "Chrome" aus. Die Webanwendung sollte sich nun in "Chrome" öffnen.
+Führen sie nun die Datei "index.html" mit "Chrome" oder "Firefox" aus. Die Webanwendung sollte sich nun in "Chrome" oder "Firefox" öffnen.
 
 
 
